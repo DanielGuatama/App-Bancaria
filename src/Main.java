@@ -28,12 +28,31 @@ public class Main {
             System.out.println(menu);
             opcion = teclado.nextInt();
 
-            switch (opcion){
-
+            switch (opcion) {
+                case 1:
+                    System.out.println("El saldo actualizado es: " + saldo + "$");
+                    break;
+                case 2:
+                    System.out.println("¿Cuàl es el valor que desea retirar?");
+                    double valorARetirar = teclado.nextDouble();
+                    if (valorARetirar > saldo) {
+                        System.out.println("Saldo Insuficiente");
+                    } else {
+                        saldo = saldo - valorARetirar;
+                        System.out.println("El saldo actualizado es: " + saldo);
+                    }
+                    break;
+                case 3:
+                    System.out.println("¿Cuàl es el valor que desea depositar");
+                    double valorADespositar = teclado.nextDouble();
+                    saldo += valorADespositar;
+                    System.out.println("El saldo actualizado es: " + saldo);
+                    break;
+                case 9:
+                    System.out.println("Saliendo del programa, gracias por utilizar nuestros servicios");
+                default:
+                    System.out.println("Opciòn no valida");
             }
-
+            }
         }
-
-
     }
-}
